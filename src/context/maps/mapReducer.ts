@@ -1,4 +1,6 @@
-import { Map, Marker } from 'mapbox-gl';
+/*eslint import/no-webpack-loader-syntax: off*/
+//@ts-ignore
+import { Map, Marker } from '!mapbox-gl';
 import { MapState } from './MapProvider';
 
 type MapAction =

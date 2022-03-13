@@ -1,5 +1,7 @@
+/*eslint import/no-webpack-loader-syntax: off*/
 import { stat } from 'fs';
-import { AnySourceData, LngLatBounds, Map, Marker, Popup } from 'mapbox-gl';
+//@ts-ignore
+import { AnySourceData, LngLatBounds, Map, Marker, Popup } from '!mapbox-gl';
 import { useContext, useEffect, useReducer } from 'react';
 import { PlacesContext } from '..';
 import { directionsApi } from '../../apis';
