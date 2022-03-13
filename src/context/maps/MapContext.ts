@@ -11,6 +11,7 @@ interface MapContextProps {
         start: [number, number],
         end: [number, number]
     ) => Promise<void>;
+    clearRoute: () => void;
 }
 
 export const MapContext = createContext({} as MapContextProps);

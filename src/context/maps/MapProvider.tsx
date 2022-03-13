@@ -100,10 +100,7 @@ export const MapProvider = ({ children }: Props) => {
             }
         };
 
-        if (state.map?.getLayer('RouteString')) {
-            state.map.removeLayer('RouteString');
-            state.map.removeSource('RouteString');
-        }
+        clearRoute();
 
         state.map?.addSource('RouteString', sourceData);
         state.map?.addLayer({
@@ -121,9 +118,16 @@ export const MapProvider = ({ children }: Props) => {
         });
     };
 
+    const clearRoute = () => {
+        if (state.map?.getLayer('RouteString')) {
+            state.map.removeLayer('RouteString');
+            state.map.removeSource('RouteString');
+        }
+    };
+
     return (
         <MapContext.Provider
-            value={{ ...state, setMap, getRouteBetweenPoints }}>
+            value={{ ...state, setMap, getRouteBetweenPoints, clearRoute }}>
             {children}
         </MapContext.Provider>
     );
